@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from src.model_code_changes import predict_evaluate
+from src.model_code_changes import prediction
 
 
 
@@ -8,7 +8,7 @@ from src.model_code_changes import predict_evaluate
 def test_predict(test_data):
     inference_df = pd.read_csv(test_data)
     inference_df = inference_df[:500]
-    f1_score, accuracy_score, precision, recall = predict_evaluate(inference_df)
+    f1_score, accuracy_score, precision, recall = prediction.predict_evaluate(inference_df)
     # Check returned scores value
     rounded_f1 = round(f1_score, 2)
     assert rounded_f1 == 0.98
