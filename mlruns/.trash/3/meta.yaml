@@ -1,0 +1,7 @@
+artifact_location: file:///Users/s.radhakrishnan/Documents/Mlops/assignment/data_science_problem/mlruns/3
+creation_time: null
+experiment_id: '3'
+last_update_time: 1679606188839
+lifecycle_stage: active
+name: Prediction exp3
+tags: {}

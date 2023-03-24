@@ -4,3 +4,4 @@ jupyter
 ipykernel
 scikit-learn
 matplotlib
+mlflow

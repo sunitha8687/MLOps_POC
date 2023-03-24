@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/608132757927876173/93360b913d294380aec3596e2c4640da/artifacts
+end_time: 1679607156966
+entry_point_name: ''
+experiment_id: '608132757927876173'
+lifecycle_stage: active
+run_id: 93360b913d294380aec3596e2c4640da
+run_name: shivering-owl-990
+run_uuid: 93360b913d294380aec3596e2c4640da
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1679607146220
+status: 3
+tags: []
+user_id: s.radhakrishnan

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/608132757927876173/90cc04fae0c448a68c13a76debd8af45/artifacts
+end_time: 1679604702710
+entry_point_name: ''
+experiment_id: '608132757927876173'
+lifecycle_stage: active
+run_id: 90cc04fae0c448a68c13a76debd8af45
+run_name: bemused-whale-930
+run_uuid: 90cc04fae0c448a68c13a76debd8af45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1679604693441
+status: 4
+tags: []
+user_id: s.radhakrishnan

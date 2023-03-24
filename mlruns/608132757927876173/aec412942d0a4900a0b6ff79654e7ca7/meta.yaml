@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/608132757927876173/aec412942d0a4900a0b6ff79654e7ca7/artifacts
+end_time: 1679604891755
+entry_point_name: ''
+experiment_id: '608132757927876173'
+lifecycle_stage: active
+run_id: aec412942d0a4900a0b6ff79654e7ca7
+run_name: honorable-stoat-936
+run_uuid: aec412942d0a4900a0b6ff79654e7ca7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1679604871510
+status: 3
+tags: []
+user_id: s.radhakrishnan
