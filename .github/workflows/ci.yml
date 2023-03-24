@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: checkout mlops repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v1
     - name: Run python script
       run: echo model_code_changes.py
     - name: Test with pytest
