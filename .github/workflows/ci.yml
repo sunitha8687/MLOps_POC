@@ -14,4 +14,4 @@ jobs:
       run: echo model_code_changes.py
     - name: Test with pytest
       run: |
-        pytest tests
+        pytest
