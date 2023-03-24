@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: checkout mlops repository
+      uses: actions/checkout@v2
+    - name: Run python script
+      run: echo model_code_changes.py
+    - name: Test with pytest
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        pytest tests

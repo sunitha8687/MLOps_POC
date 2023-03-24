@@ -1,4 +1,6 @@
-artifact_location: file:///Users/s.radhakrishnan/Documents/Mlops/assignment/data_science_problem/mlruns/0
+artifact_location: mlflow-artifacts:/0
+creation_time: 1679680728366
 experiment_id: '0'
+last_update_time: 1679680728366
 lifecycle_stage: active
 name: Default

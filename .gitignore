@@ -1,5 +1,7 @@
 # Ignore Mac system files
 .DS_store
+.ipynb_checkpoints/
+.vscode/
 
 # Ignore sensitive information like data to be stored in repository
-data/
+src/data/

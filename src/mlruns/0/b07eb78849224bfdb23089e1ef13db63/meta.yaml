@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/s.radhakrishnan/Documents/Mlops/assignment/data_science_problem/mlruns/0/b07eb78849224bfdb23089e1ef13db63/artifacts
+end_time: 1679603216817
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: b07eb78849224bfdb23089e1ef13db63
+run_uuid: b07eb78849224bfdb23089e1ef13db63
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1679603207027
+status: 4
+tags: []
+user_id: s.radhakrishnan

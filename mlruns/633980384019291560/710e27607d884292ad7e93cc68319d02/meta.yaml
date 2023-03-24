@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/633980384019291560/710e27607d884292ad7e93cc68319d02/artifacts
+end_time: 1679681146641
+entry_point_name: ''
+experiment_id: '633980384019291560'
+lifecycle_stage: active
+run_id: 710e27607d884292ad7e93cc68319d02
+run_name: respected-pig-121
+run_uuid: 710e27607d884292ad7e93cc68319d02
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1679681136647
+status: 3
+tags: []
+user_id: s.radhakrishnan

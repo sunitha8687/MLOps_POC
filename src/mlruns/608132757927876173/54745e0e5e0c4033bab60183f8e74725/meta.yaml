@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/608132757927876173/54745e0e5e0c4033bab60183f8e74725/artifacts
+end_time: 1679605002329
+entry_point_name: ''
+experiment_id: '608132757927876173'
+lifecycle_stage: active
+run_id: 54745e0e5e0c4033bab60183f8e74725
+run_name: serious-fish-457
+run_uuid: 54745e0e5e0c4033bab60183f8e74725
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1679604982609
+status: 3
+tags: []
+user_id: s.radhakrishnan
