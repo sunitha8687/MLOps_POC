@@ -4,6 +4,9 @@ warnings.filterwarnings('ignore', category=DeprecationWarning)
 from sklearn.gaussian_process.kernels import RBF
 import pandas as pd
 import logging
+import os
+print("print cwd:",os.getcwd())
+logging.info(os.getcwd())
 from src.preprocess import data_preprocess
 from src.train import train_model
 from src.predict import predict_probabilities
@@ -48,6 +51,7 @@ if __name__ == '__main__':
     model, f1_score, precision, recall = predict_evaluate(df)
     #print(f1_score, precision, recall)
     #model_logging()
+    print()
 
 
 
