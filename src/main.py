@@ -7,10 +7,10 @@ import logging
 import os
 print("print cwd:",os.getcwd())
 logging.info(os.getcwd())
-from src.preprocess import data_preprocess
-from src.train import train_model
-from src.predict import predict_probabilities
-from src.new_model import predict_evaluate
+from preprocess import data_preprocess
+from train import train_model
+from predict import predict_probabilities
+from new_model import predict_evaluate
 
 
 logging.basicConfig(level=logging.WARN)
