@@ -7,7 +7,7 @@ import logging
 import os
 print("print cwd:",os.getcwd())
 logging.info(os.getcwd())
-from preprocess import data_preprocess
+from preprocess import data_preprocess # if running in local: include src.preprocess
 from train import train_model
 from predict import predict_probabilities
 from new_model import predict_evaluate
@@ -39,8 +39,8 @@ def model_logging():
 if __name__ == '__main__':
 
     try:
-        df = pd.read_csv("../data/historical_sensor_data.csv", sep=',')
-        inference_df = pd.read_csv("../data/latest_sensor_data.csv", sep=',')
+        df = pd.read_csv("data/historical_sensor_data.csv", sep=',')  # add double dots ../data/ if running in local
+        inference_df = pd.read_csv("data/latest_sensor_data.csv", sep=',')
     except Exception as e:
         logger.exception("Unable to download training and inference CSV, check your internet connection. Error: %s", e)
 
