@@ -14,7 +14,6 @@ from sklearn.gaussian_process.kernels import RBF
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn import metrics
-#from utils import Logging
 
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
@@ -198,8 +197,6 @@ if __name__ == '__main__':
     clf, xx, yy, Z, score = get_prediction.train_model(x_train, x_test, y_train, y_test, xx, yy, cm, cm_bright)
     pred_results = get_prediction.predict_probab(inference_df, cm, cm_bright, xx, yy, Z)
     f1_score, accuracy_score, precision, recall = get_prediction.predict_evaluate(df)
-    #mlflow_log = Logging()
-    #mlflow_log.log_model()
 
 
 
