@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from src.model_code_changes import prediction
+from src.new_model import predict_evaluate
 
 
 
@@ -8,12 +8,11 @@ from src.model_code_changes import prediction
 @pytest.mark.predict
 
 def test_predict(test_data):
-    pred = prediction()
     inference_df = pd.read_csv(test_data)
     inference_df = inference_df[:500]
-    f1_score, accuracy_score, precision, recall = pred.predict_evaluate(inference_df)
-    # Check returned scores value
+    f1_score, precision, recall = predict_evaluate(inference_df)
+    # Check returned f1 score value
     rounded_f1 = round(f1_score, 2)
-    assert rounded_f1 == 0.98
+    assert rounded_f1 == 0.96
     # Check returned scores type
     assert isinstance(f1_score, float)

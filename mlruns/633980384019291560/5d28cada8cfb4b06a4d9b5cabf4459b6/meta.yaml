@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/633980384019291560/5d28cada8cfb4b06a4d9b5cabf4459b6/artifacts
+end_time: 1679757471600
+entry_point_name: ''
+experiment_id: '633980384019291560'
+lifecycle_stage: active
+run_id: 5d28cada8cfb4b06a4d9b5cabf4459b6
+run_name: amusing-cat-448
+run_uuid: 5d28cada8cfb4b06a4d9b5cabf4459b6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1679757460689
+status: 3
+tags: []
+user_id: s.radhakrishnan

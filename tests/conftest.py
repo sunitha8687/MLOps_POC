@@ -5,7 +5,7 @@ from os.path import dirname as d
 
 @pytest.fixture()
 def test_data(): # you cant download a model everytime, so need to put that in the fixture
-    yield "tests/data/historical_sensor_data.csv"
+    yield "../data/historical_sensor_data.csv"
 
 data_science_problem = f"{d(d(abspath(__file__)))}"
 sys.path.append(f"{data_science_problem}/src")

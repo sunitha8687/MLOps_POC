@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/633980384019291560/f8c4272fa9c6478cb5437587585f6c3e/artifacts
+end_time: 1679758182621
+entry_point_name: ''
+experiment_id: '633980384019291560'
+lifecycle_stage: active
+run_id: f8c4272fa9c6478cb5437587585f6c3e
+run_name: secretive-worm-914
+run_uuid: f8c4272fa9c6478cb5437587585f6c3e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1679758169492
+status: 3
+tags: []
+user_id: s.radhakrishnan

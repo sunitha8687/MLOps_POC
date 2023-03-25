@@ -1,7 +1,0 @@
-artifact_location: file:///Users/s.radhakrishnan/Documents/Mlops/assignment/data_science_problem/mlruns/5
-creation_time: null
-experiment_id: '5'
-last_update_time: 1679606208563
-lifecycle_stage: active
-name: Classification model experiment1
-tags: {}
