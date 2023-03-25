@@ -4,6 +4,7 @@ from src.model_code_changes import prediction
 
 
 
+
 @pytest.mark.predict
 def test_predict(test_data):
     inference_df = pd.read_csv(test_data)
