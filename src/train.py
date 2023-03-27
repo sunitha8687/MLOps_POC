@@ -16,7 +16,7 @@ def train_model(x_train, x_test, y_train, y_test, xx, yy):
         X_test: Testing data,
         y_train: Training label,
         y_test: Testing label
-        xx,yy: co-ordinates for plotting
+        xx,yy: co-ordinates
     Returns:
         clf: classifying model
         score: score of the test data

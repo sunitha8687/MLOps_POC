@@ -5,11 +5,11 @@ from sklearn.gaussian_process.kernels import RBF
 import pandas as pd
 import logging
 import os
-print("print cwd:",os.getcwd())
-logging.info(os.getcwd())
-from preprocess import data_preprocess # if running in local: include src.preprocess
+#print("print cwd:",os.getcwd())
+#logging.info(os.getcwd())
+from preprocess import data_preprocess  # if running in local: include src.preprocess
 from train import train_model
-from predict import predict_probabilities
+from predict import inference
 from new_model import predict_evaluate
 
 
@@ -36,22 +36,21 @@ def model_logging():
     mlflow.log_artifact("./data/historical_sensor_data.csv")
     mlflow.log_artifact("./data/latest_sensor_data.csv")
 
+
 if __name__ == '__main__':
 
     try:
-        df = pd.read_csv("data/historical_sensor_data.csv", sep=',')  # add double dots ../data/ if running in local
-        inference_df = pd.read_csv("data/latest_sensor_data.csv", sep=',')
+        df = pd.read_csv("../data/historical_sensor_data.csv", sep=',')  # add double dots ../data/ if running in local
+        inference_df = pd.read_csv("../data/latest_sensor_data.csv", sep=',')
     except Exception as e:
         logger.exception("Unable to download training and inference CSV, check your internet connection. Error: %s", e)
 
     x_train, x_test, y_train, y_test, xx, yy = data_preprocess(df)
-    #plt, cm, cm_bright = get_prediction.data_visualize(x_train, x_test, xx, yy)
+    # plt, cm, cm_bright = get_prediction.data_visualize(x_train, x_test, xx, yy)
     clf, score = train_model(x_train, x_test, y_train, y_test, xx, yy)
-    #pred_results = predict_probabilities(inference_df)
+    pred_results,inferred_df = inference(inference_df)
     model, f1_score, precision, recall = predict_evaluate(df)
-    #print(f1_score, precision, recall)
-    #model_logging()
-    print()
+    # model_logging() # uncomment when running in local. Atm, not prepared for CI/CD only in this case.
 
 
 

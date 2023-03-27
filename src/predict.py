@@ -3,9 +3,10 @@ import numpy as np
 warnings.filterwarnings('ignore', category=ResourceWarning)
 import pickle
 
-def predict_probabilities(inference_df):
+
+def inference(inference_df):
     """
-    This functions predicts the label using the guassian classifier model and plots the output of the inference data
+    This functions performs prediction by loading the pickled model.
     Parameters:
         inference_df: latest inference data
     Returns:
@@ -13,9 +14,7 @@ def predict_probabilities(inference_df):
     """
 
     X_inference = inference_df.values
-    # predict labels
-    pickled_model = pickle.load(open('model.pkl', 'rb'))
+    pickled_model = pickle.load(open('src/model.pkl', 'rb'))  # if running in local, add ../src two dots
     y_pred = pickled_model.predict_proba(X_inference)[:, 1]
-    inference_df = inference_df.assign(y_pred=np.round(y_pred, 0))
-
-    return y_pred
+    inferred_df = inference_df.assign(y_pred=np.round(y_pred, 0))
+    return y_pred, inferred_df

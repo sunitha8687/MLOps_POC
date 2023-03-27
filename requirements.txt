@@ -6,3 +6,4 @@ scikit-learn
 matplotlib
 mlflow
 pytest
+fastapi
