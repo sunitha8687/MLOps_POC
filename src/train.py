@@ -1,10 +1,10 @@
 import warnings
 import numpy as np
+import pickle
 warnings.filterwarnings('ignore', category=DeprecationWarning)
 from sklearn.gaussian_process import GaussianProcessClassifier
 from sklearn.gaussian_process.kernels import RBF
 warnings.filterwarnings('ignore', category=ResourceWarning)
-import pickle
 
 
 def train_model(x_train, x_test, y_train, y_test, xx, yy):
@@ -12,8 +12,8 @@ def train_model(x_train, x_test, y_train, y_test, xx, yy):
     This functions trains a classification model and plots the training and testing data along with the
     labels to visualize the classifier output.
     Parameters:
-        X_train: Training data,
-        X_test: Testing data,
+        x_train: Training data,
+        x_test: Testing data,
         y_train: Training label,
         y_test: Testing label
         xx,yy: co-ordinates

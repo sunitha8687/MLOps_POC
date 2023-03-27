@@ -1,12 +1,9 @@
 import mlflow.sklearn
+import pandas as pd
+import logging
 import warnings
 warnings.filterwarnings('ignore', category=DeprecationWarning)
 from sklearn.gaussian_process.kernels import RBF
-import pandas as pd
-import logging
-import os
-#print("print cwd:",os.getcwd())
-#logging.info(os.getcwd())
 from preprocess import data_preprocess  # if running in local: include src.preprocess
 from train import train_model
 from predict import inference
@@ -46,7 +43,6 @@ if __name__ == '__main__':
         logger.exception("Unable to download training and inference CSV, check your internet connection. Error: %s", e)
 
     x_train, x_test, y_train, y_test, xx, yy = data_preprocess(df)
-    # plt, cm, cm_bright = get_prediction.data_visualize(x_train, x_test, xx, yy)
     clf, score = train_model(x_train, x_test, y_train, y_test, xx, yy)
     pred_results,inferred_df = inference(inference_df)
     model, f1_score, precision, recall = predict_evaluate(df)

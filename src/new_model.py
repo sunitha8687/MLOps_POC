@@ -6,6 +6,16 @@ from sklearn.model_selection import train_test_split
 
 
 def predict_evaluate(df):
+    """
+    This is a simple function that trains and predicts the given data using SVM algorithm.
+    Args:
+        df: input dataframe
+
+    Returns:
+        model: returns trained model
+        f1_score, precision, recall: evaluation metrics for this model.
+
+    """
     x_values = df[['sensor_1', 'sensor_2']]
     y_values = df['label']
 

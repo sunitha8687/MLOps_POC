@@ -5,14 +5,15 @@ import logging
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
 
+
 def data_preprocess(df):
     """
         Data preprocessing is done in this function including train-test split.
         Parameters:
             df: Input dataframe
         Returns:
-            X_train: Training data,
-            X_test: Testing data,
+            x_train: Training data,
+            x_test: Testing data,
             y_train: Training label,
             y_test: Testing label
             xx,yy: co-ordinates for plotting

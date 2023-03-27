@@ -11,10 +11,11 @@ def inference(inference_df):
         inference_df: latest inference data
     Returns:
         ypred : predictions of the label
+        inferred_df: df with predictions
     """
 
-    X_inference = inference_df.values
+    x_inference = inference_df.values
     pickled_model = pickle.load(open('src/model.pkl', 'rb'))  # if running in local, add ../src two dots
-    y_pred = pickled_model.predict_proba(X_inference)[:, 1]
+    y_pred = pickled_model.predict_proba(x_inference)[:, 1]
     inferred_df = inference_df.assign(y_pred=np.round(y_pred, 0))
     return y_pred, inferred_df
