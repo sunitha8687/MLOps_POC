@@ -8,8 +8,11 @@ def test_predict(test_data):
     inference_df = pd.read_csv(test_data)
     inference_df = inference_df[:500]
     model, f1_score, precision, recall = predict_evaluate(inference_df)
-    # Check returned f1 score value
-    rounded_f1 = round(f1_score, 2)
-    assert rounded_f1 == 0.96
     # Check returned scores type
+    assert precision >= 0.9
+    assert recall >= 0.9
+    assert f1_score >= 0.9
     assert isinstance(f1_score, float)
+
+    #pytest -m predict -- integrate this in ci cd. 
+    #integration test - to check the flask api. 

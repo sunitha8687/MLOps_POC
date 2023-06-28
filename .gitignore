@@ -2,5 +2,5 @@
 .DS_store
 .ipynb_checkpoints/
 .vscode/
-
+**__pycache__
 # Ignore sensitive information like data to be stored in repository

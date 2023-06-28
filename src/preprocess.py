@@ -20,7 +20,7 @@ def data_preprocess(df):
     """
 
     X = df[['sensor_1', 'sensor_2']].values
-    y = df[['label' ,]].values
+    y = df[['label' ,]].values 
     X = StandardScaler().fit_transform(X)
     x_train, x_test, y_train, y_test = train_test_split(
         X, y, test_size=0.3, random_state=99
@@ -31,3 +31,7 @@ def data_preprocess(df):
     xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
 
     return x_train, x_test, y_train, y_test, xx, yy
+
+#   Tests - For no.of.columns and column names. 
+# - Check for output types. - Both should be float or int. Should not be str, booleean.
+# - Incorporate three tests specifically. 
