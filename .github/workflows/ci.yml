@@ -19,8 +19,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - name: Run python script
-      run: python3 ./src/main.py
-      
+      run: python3 ./main.py
+
   test:
     runs-on: ubuntu-latest
 
