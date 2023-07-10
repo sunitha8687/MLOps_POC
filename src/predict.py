@@ -15,7 +15,7 @@ def inference(inference_df):
     """
 
     x_inference = inference_df.values
-    pickled_model = pickle.load(open('src/model.pkl', 'rb'))  # if running in local, add ../src two dots
+    pickled_model = pickle.load(open('src/model.pkl', 'rb'))
     y_pred = pickled_model.predict_proba(x_inference)[:, 1]
     inferred_df = inference_df.assign(y_pred=np.round(y_pred, 0))
     return y_pred, inferred_df

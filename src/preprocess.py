@@ -30,8 +30,9 @@ def data_preprocess(df):
     y_min, y_max = X[:, 1].min() - 0.5, X[:, 1].max() + 0.5
     xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
 
-    return x_train, x_test, y_train, y_test, xx, yy
+    return x_train, x_test, y_train, y_test, xx, yy  
 
 #   Tests - For no.of.columns and column names. 
 # - Check for output types. - Both should be float or int. Should not be str, booleean.
 # - Incorporate three tests specifically. 
+# Write test for preprocess - train, test data check length, its transformed scaled valzes are bet 0 to 1.- 

@@ -20,3 +20,7 @@ def run_inference(input_to_model:ModelInput):
     else:
         predictions = "Faulty"
     return predictions
+
+
+# import client from pytest to do integration tests. we need a fixture. 
+# Send the post request as input and write assert statements. 

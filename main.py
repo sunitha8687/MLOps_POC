@@ -4,7 +4,8 @@ import logging
 import warnings
 warnings.filterwarnings('ignore', category=DeprecationWarning)
 from sklearn.gaussian_process.kernels import RBF
-from src.preprocess import data_preprocess  # if running in local: include src.preprocess
+from src.preprocess import data_preprocess 
+from src.preprocess import data_quality_checks
 from src.train import train_model
 from src.predict import inference
 from src.new_model import predict_evaluate
@@ -43,6 +44,7 @@ if __name__ == '__main__':
     print(df.head())
     inference_df = pd.read_csv(inference_file, sep=',')
     print(inference_df.head())
+    print("columns:", col)
     x_train, x_test, y_train, y_test, xx, yy = data_preprocess(df)
     clf, score = train_model(x_train, x_test, y_train, y_test, xx, yy)
     pred_results,inferred_df = inference(inference_df)
