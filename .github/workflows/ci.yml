@@ -41,6 +41,7 @@ jobs:
         pytest tests -m dataValidation
 
   deploy:
+    name: "Build and Push to ECR"
     runs-on: python:3.10-slim
 
     steps:
@@ -52,14 +53,17 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: "eu-north-1"
+          aws-region: ${{secrets.AWS_REGION}}
 
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Build and push Docker image
+      - name: Build and push the tagged Docker image to ECR
+        env: 
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          ECR_REPOSITORY: ${{secrets.AWS_ECR_REPO}}
+          IMAGE_TAG: latest
         run: |
-          docker build -t cicdmlops:latest .
-          docker tag cicdmlops:latest ${{ steps.login-ecr.outputs.registry }}/cicdmlops:latest
-          docker push ${{ steps.login-ecr.outputs.registry }}/cicdmlops:latest
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
