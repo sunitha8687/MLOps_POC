@@ -41,7 +41,6 @@ jobs:
         pytest tests -m dataValidation
 
   deploy:
-    name: "Build and Push to ECR"
     runs-on: python:3.10-slim
 
     steps:
