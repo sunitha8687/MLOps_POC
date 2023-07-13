@@ -32,7 +32,5 @@ def data_preprocess(df):
 
     return x_train, x_test, y_train, y_test, xx, yy  
 
-#   Tests - For no.of.columns and column names. 
-# - Check for output types. - Both should be float or int. Should not be str, booleean.
-# - Incorporate three tests specifically. 
+
 # Write test for preprocess - train, test data check length, its transformed scaled valzes are bet 0 to 1.- 

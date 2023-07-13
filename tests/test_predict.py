@@ -12,7 +12,5 @@ def test_predict(test_data):
     assert precision >= 0.9
     assert recall >= 0.9
     assert f1_score >= 0.9
-    assert isinstance(f1_score, float)
-
-    #pytest -m predict -- integrate this in ci cd. 
-    #integration test - to check the flask api. 
+    assert isinstance(f1_score, float) 
+     

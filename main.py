@@ -5,7 +5,6 @@ import warnings
 warnings.filterwarnings('ignore', category=DeprecationWarning)
 from sklearn.gaussian_process.kernels import RBF
 from src.preprocess import data_preprocess 
-from src.preprocess import data_quality_checks
 from src.train import train_model
 from src.predict import inference
 from src.new_model import predict_evaluate
@@ -44,8 +43,11 @@ if __name__ == '__main__':
     print(df.head())
     inference_df = pd.read_csv(inference_file, sep=',')
     print(inference_df.head())
-    print("columns:", col)
     x_train, x_test, y_train, y_test, xx, yy = data_preprocess(df)
+    print("length train",len(x_train))
+    print("length test",len(x_test))
+    print("shape train",x_train.shape)
+    print("shape test",x_test.shape)
     clf, score = train_model(x_train, x_test, y_train, y_test, xx, yy)
     pred_results,inferred_df = inference(inference_df)
     model, f1_score, precision, recall = predict_evaluate(df)

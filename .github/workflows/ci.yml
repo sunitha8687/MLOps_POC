@@ -38,7 +38,8 @@ jobs:
     - name: Run unit tests
       run: |
         pytest tests -m predict
-        pytest tests -m dataValidation
+        pytest tests -m preprocess
+        pytest tests -m evaluate
 
   deploy:
     runs-on: ubuntu-latest
