@@ -7,3 +7,4 @@ matplotlib
 mlflow
 pytest
 fastapi
+httpx
