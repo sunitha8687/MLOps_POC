@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from src.predict import inference
-import pandas as pd
 from pydantic import BaseModel
 
 
@@ -13,14 +12,8 @@ class ModelInput(BaseModel):
 @app.post('/infer')
 def run_inference(input_to_model:ModelInput):
     json_input = input_to_model.dict()
-    inference_df = pd.DataFrame.from_dict(json_input, orient='index')
-    y_pred, inferred_df = inference(inference_df)
-    if inferred_df['y_pred'] == 1.0:
-        predictions = "Non-faulty"
+    y_pred = inference(json_input["sensor_1"],json_input["sensor_2"])
+    if y_pred > 0.9:
+        return {"predictions":"Non-faulty"}
     else:
-        predictions = "Faulty"
-    return predictions
-
-
-# import client from pytest to do integration tests. we need a fixture. 
-# Send the post request as input and write assert statements. 
+        return {"predictions":"Faulty"} 

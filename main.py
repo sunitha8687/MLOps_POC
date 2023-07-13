@@ -40,14 +40,8 @@ if __name__ == '__main__':
     train_file = config["data"]["file"]
     inference_file = config["data"]["inference"]
     df = pd.read_csv(train_file, sep=',')  
-    print(df.head())
     inference_df = pd.read_csv(inference_file, sep=',')
-    print(inference_df.head())
     x_train, x_test, y_train, y_test, xx, yy = data_preprocess(df)
-    print("length train",len(x_train))
-    print("length test",len(x_test))
-    print("shape train",x_train.shape)
-    print("shape test",x_test.shape)
     clf, score = train_model(x_train, x_test, y_train, y_test, xx, yy)
     pred_results,inferred_df = inference(inference_df)
     model, f1_score, precision, recall = predict_evaluate(df)
