@@ -9,7 +9,7 @@ def client():
     yield client
 
 @pytest.mark.integration
-def test_predict_endpoint():
+def test_predict_endpoint(client):
    # test data
    payload =  {
    "sensor_1": "1.6623607876951856",
@@ -17,7 +17,7 @@ def test_predict_endpoint():
    }
 
    # Send request to the Fast API
-   response = client.get("/infer", json = payload)
+   response = client.post("/infer", json = payload)
 
    # Perform assertions on the response
    assert response.status_code == 200
