@@ -23,6 +23,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    needs: build
 
     steps:
     - name: checkout mlops repository
@@ -40,9 +41,13 @@ jobs:
         pytest tests -m predict
         pytest tests -m preprocess
         pytest tests -m evaluate
+    - name: Run integration test
+      run: |
+        pytest tests -m integration
 
   deploy:
     runs-on: ubuntu-latest
+    needs: test
 
     steps:
       - name: Checkout repository
