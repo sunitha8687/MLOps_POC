@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout mlops repository
+    - name: Checkout MLops Repository
       uses: actions/checkout@v1
     - name: Build Docker Container
       run: docker build -t cicdmlops:latest .
@@ -18,13 +18,13 @@ jobs:
     needs: build
 
     steps:
-    - name: checkout mlops repository
+    - name: Checkout MLops Repository
       uses: actions/checkout@v1
-    - name: setup python
+    - name: Setup Python
       uses: actions/setup-python@v4
       with:
           python-version: '3.10'
-    - name: install project dependencies
+    - name: Install Project Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
@@ -42,7 +42,7 @@ jobs:
     needs: test
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
       - name: Configure AWS credentials
@@ -61,7 +61,7 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: ${{secrets.AWS_ECR_REPO}}
           IMAGE_TAG: latest
-          VERSION: v1.20230726
+          VERSION: v1.20230801
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$VERSION
