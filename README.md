@@ -39,7 +39,7 @@ Run the main.py file of the project either in any IDE or terminal.
 3. To start the app execute the command from the terminal: uvicorn app:app --reload 
 4. Create a post request and edit the body before pressing 'send'. Check the ouput. 
 
-Note: the project contains .github/workflow/ci.yml to enable github actions. Your CI-CD pipeline will run automatically once you push any changes to the repository. 
+Note: the project contains .github/workflow/cicd.yml to enable github actions. Your CI-CD pipeline will run automatically once you push any changes to the repository. 
 
 # How to setup CI - CD for this project? 
 
@@ -47,6 +47,6 @@ Note: the project contains .github/workflow/ci.yml to enable github actions. You
 2. Define the necessary build, test and deploy jobs in yaml format.
 3. Create ECR repository in AWS and connect to ECR using github actions. 
 4. Create Dockerfile
-5. Deploy job uses AWS cloud as a platform to deploy the container as
+5. Deploy job uses AWS cloud as a platform to deploy the application as docker image in ECR repository. 
 
 
